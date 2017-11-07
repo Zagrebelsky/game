@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+
+    {% for name in character_names %}
+        <br>
+            {{ name }}
+        </br>
+    {% endfor %}
+
+    {% for town in town_list %}
+        <br>
+            {{ town }}
+        </br>
+    {% endfor %}
+
+{% endblock %}
