@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'character.apps.CharacterConfig',
     'users.apps.UsersConfig',
     'town.apps.TownConfig',
+    'item.apps.ItemConfig',
 ]
 
 MIDDLEWARE = [

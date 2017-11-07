@@ -7,8 +7,6 @@ from django.db import models
 class Town(models.Model):
     name = models.CharField(max_length=200)
     citizens = models.IntegerField(default=40)
-    wall = models.BooleanField(default=False)
-    wall_ap = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -20,3 +18,10 @@ class BuildingType(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Building(models.Model):
+    town = models.ForeignKey('town.Town', on_delete=models.CASCADE)
+    building_type = models.ForeignKey('town.BuildingType', on_delete=models.CASCADE)
+    success = models.BooleanField(default=False)
+    ap = models.IntegerField(default=0)

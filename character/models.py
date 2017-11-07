@@ -13,3 +13,7 @@ class Character(models.Model):
         return self.name
 
 
+class Inventory(models.Model):
+    character = models.ForeignKey('character.Character', on_delete=models.CASCADE)
+    item = models.ForeignKey('item.Item', on_delete=models.CASCADE)
+
