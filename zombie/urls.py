@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('character.urls')),
     url(r'', include('users.urls')),
+    url(r'', include('town.urls')),
 ]

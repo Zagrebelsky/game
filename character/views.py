@@ -19,8 +19,8 @@ def create_character(request):
 
 
 def index(request):
-    character_names = list(Character.objects.filter(user=request.user).values_list('name', flat=True))
+    character_names = (Character.objects.filter(user=request.user).values_list('name', flat=True))[0]
     town_id = (Character.objects.filter(user=request.user).values_list('town_id', flat=True))
-    town_list = list(Town.objects.filter(id=town_id).values_list('name', flat=True))
+    town_list = (Town.objects.filter(id=town_id).values_list('name', flat=True))[0]
     return render(request, 'character/index.html', {'character_names': character_names, 'town_list': town_list})
 
