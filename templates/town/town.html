@@ -9,7 +9,8 @@
     <b>Buildings:</b>
     {% for building in building_list %}
         <br>
-            {{ building }}
+            {{ building.name }}
+            {{ building.defence }}
     {% endfor %}
 
     {% for ap in building_ap %}
