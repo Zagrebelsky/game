@@ -9,12 +9,8 @@
     <b>Buildings:</b>
     {% for building in building_list %}
         <br>
-            {{ building.name }}
-            {{ building.defence }}
-    {% endfor %}
-
-    {% for ap in building_ap %}
-        <br>
-            ap: {{ ap }}
+            building name: {{ building.building_type.name }};
+            needs ap: {{ building.building_type.cost }};
+            current ap: {{ building.ap }}
     {% endfor %}
 {% endblock %}
