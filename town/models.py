@@ -7,6 +7,7 @@ from django.db import models
 class Town(models.Model):
     name = models.CharField(max_length=200)
     citizens = models.IntegerField(default=40)
+    defence = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return self.name
@@ -15,6 +16,7 @@ class Town(models.Model):
 class BuildingType(models.Model):
     name = models.CharField(max_length=200)
     cost = models.IntegerField(default=0)
+    defence = models.IntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return self.name

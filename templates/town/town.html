@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <b>{{ town_name }}</b>
-    <br>{{ building_list }}
+    <b>{{ town_name }}
+    <br>
+    defence: {{ defence }}
+    </b>
+    <br>
+    <b>Buildings:</b>
+    {% for building in building_list %}
+        <br>
+            {{ building }}
+    {% endfor %}
+
+    {% for ap in building_ap %}
+        <br>
+            ap: {{ ap }}
+    {% endfor %}
 {% endblock %}
