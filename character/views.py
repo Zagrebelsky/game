@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
-from .form import CharacterForm
+from .forms import CharacterForm
 from town.models import Town
 # Create your views here.
 

@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <b>{{ town_name }}
+    {% for town in user_town %}
+        <h2>{{ town.name }}
+    {% endfor %}
     <br>
     defence: {{ defence }}
-    </b>
-    <br>
-    <b>Buildings:</b>
+    </h2>
+    <h3>Buildings:</h3>
     {% for building in building_list %}
         <br>
-            building name: {{ building.building_type.name }};
+            <b>{{ building.building_type.name }}</b>;
             needs ap: {{ building.building_type.cost }};
             current ap: {{ building.ap }}
+        <form action="" method="post">
+            {% csrf_token %}
+            change to: {{ form }}
+            <input type="submit" value="Submit" />
+        </form>
     {% endfor %}
 {% endblock %}
